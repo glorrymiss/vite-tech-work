@@ -5,5 +5,5 @@ export const List = styled.ul`
   flex-wrap: wrap;
 
   gap: 30px;
-  margin-top: 40px;
+  margin: 30px 0 70px;
 `;
