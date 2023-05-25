@@ -20,12 +20,9 @@ export const Card = ({ tweets, followers, avatar, user }) => {
     if (!isFollowing) {
       setIsFollowing(true);
       setTotalFollowers(totalFollowers + 1);
-      console.log(totalFollowers);
-      //   setTotalFollowers();
     } else {
       setIsFollowing(false);
       setTotalFollowers(totalFollowers - 1);
-      console.log(totalFollowers);
     }
   };
   return (
@@ -41,8 +38,8 @@ export const Card = ({ tweets, followers, avatar, user }) => {
       <Button
         style={
           isFollowing
-            ? { backgroundColor: "red" }
-            : { backgroundColor: "green" }
+            ? { backgroundColor: "#5CD3A8" }
+            : { backgroundColor: "#EBD8FF" }
         }
         type="button"
         onClick={handleClick}
