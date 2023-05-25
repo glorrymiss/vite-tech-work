@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./components/App/App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <React.StrictMode basename="/vite-tech-work">
     <App />
   </React.StrictMode>
 );

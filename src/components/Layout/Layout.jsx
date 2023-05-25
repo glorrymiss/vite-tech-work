@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import Header from "../Header/Header";
 import { Container } from "./Layout.styled";
-import Loader from "components/Loader/Loader";
-import { Footer } from "components/Footer/Footer";
+import { Footer } from "../Footer/Footer";
+import Loader from "../Loader/Loader";
 const Layout = () => {
   return (
     <>
