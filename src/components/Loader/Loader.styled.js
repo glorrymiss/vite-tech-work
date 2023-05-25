@@ -7,5 +7,6 @@ export const ButtonLoad = styled.button`
   display: block;
   background: transparent;
   text-decoration: none;
+  margin: 0 auto;
   cursor: pointer;
 `;

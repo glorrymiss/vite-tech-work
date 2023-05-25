@@ -3,7 +3,7 @@ import { ButtonLoad } from "./Loader.styled";
 const Loader = () => {
   return (
     <ButtonLoad type="button">
-      <InfinitySpin width="200" color="rgba(218, 13, 13, 0.868)" />
+      <InfinitySpin width="200" color="#471ca9" />
     </ButtonLoad>
   );
 };

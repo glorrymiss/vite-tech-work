@@ -12,25 +12,30 @@ export const GridCards = () => {
   const [loading, setLoading] = useState(false);
   const [limit] = useState(3);
   const pages = users.length / limit;
-  console.log(pages);
+  //   const lastUsersIndex = page * limit;
+  //   const firstUsersIndex = lastUsersIndex - limit;
+  //   const currentUser = users.slice(firstUsersIndex, lastUsersIndex);
 
   useEffect(() => {
     setLoading(true);
     FetchApiUsers({ page, limit })
       .then((data) => {
+        setHasBtn(true);
+        setUsers(data);
         if (page === pages) {
           setHasBtn(false);
         }
-        return (
-          setUsers((prevState) => [...prevState, ...data]),
-          setLoading(false),
-          setHasBtn(true)
-        );
+        // setUsers((prevUsers) => [...prevUsers], ...data),
       })
-      .catch((error) => console.log(error));
-  }, [limit, page]);
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
+  }, [limit, page, pages]);
 
   const handleLoad = () => {
+    if (page === pages) {
+      setHasBtn(false);
+    }
+    console.log("click");
     setPage((prevState) => prevState + 1);
   };
 

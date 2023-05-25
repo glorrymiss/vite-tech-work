@@ -3,6 +3,7 @@ import { FooterBack, List, StyledLink } from "./Footer.styled";
 export const Footer = () => {
   return (
     <FooterBack>
+      <h2>Contacts</h2>
       <List>
         <li>
           <StyledLink to="#">Instagram</StyledLink>
