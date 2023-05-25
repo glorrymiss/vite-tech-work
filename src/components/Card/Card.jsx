@@ -12,6 +12,7 @@ import {
   WrapText,
 } from "./Card.styled";
 import { useState } from "react";
+import Notiflix from "notiflix";
 export const Card = ({ tweets, followers, avatar, user }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [totalFollowers, setTotalFollowers] = useState(followers);
@@ -19,6 +20,7 @@ export const Card = ({ tweets, followers, avatar, user }) => {
   const handleClick = () => {
     if (!isFollowing) {
       setIsFollowing(true);
+      Notiflix.Notify.success("Add success");
       setTotalFollowers(totalFollowers + 1);
     } else {
       setIsFollowing(false);

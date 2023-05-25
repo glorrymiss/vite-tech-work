@@ -4,6 +4,7 @@ import { FetchApiUsers } from "../../Api/Api";
 import { List } from "./GridCards.styled";
 import { BtnLoadMore } from "../BtnLoadMore/BtnLoadMore";
 import Loader from "../Loader/Loader";
+import Notiflix from "notiflix";
 
 export const GridCards = () => {
   const [users, setUsers] = useState([]);
@@ -19,9 +20,14 @@ export const GridCards = () => {
   useEffect(() => {
     setLoading(true);
     FetchApiUsers({ page, limit })
-      .then((data) => {
+      .then((users) => {
+        if (users.length === 0) {
+          Notiflix.Notify.failure(
+            "Sorry...There are nothing...Please repeate again"
+          );
+        }
         setHasBtn(true);
-        setUsers(data);
+        setUsers(users);
         if (page === pages) {
           setHasBtn(false);
         }
