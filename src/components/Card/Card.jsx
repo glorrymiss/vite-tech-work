@@ -11,7 +11,23 @@ import {
   Wrap,
   WrapText,
 } from "./Card.styled";
+import { useState } from "react";
 export const Card = ({ tweets, followers, avatar, user }) => {
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [totalFollowers, setTotalFollowers] = useState(followers);
+
+  const handleClick = () => {
+    if (!isFollowing) {
+      setIsFollowing(true);
+      setTotalFollowers(totalFollowers + 1);
+      console.log(totalFollowers);
+      //   setTotalFollowers();
+    } else {
+      setIsFollowing(false);
+      setTotalFollowers(totalFollowers - 1);
+      console.log(totalFollowers);
+    }
+  };
   return (
     <Wrap>
       <ImgLogo src={logoImg} alt={user} width={76} />
@@ -20,9 +36,19 @@ export const Card = ({ tweets, followers, avatar, user }) => {
       <ImgPerson src={avatar ? avatar : person} alt={user} width={62} />
       <WrapText>
         <Text>{tweets} tweets</Text>
-        <Text>{followers} Followers</Text>
+        <Text> {totalFollowers} Followers</Text>
       </WrapText>
-      <Button type="button">Follow</Button>
+      <Button
+        style={
+          isFollowing
+            ? { backgroundColor: "red" }
+            : { backgroundColor: "green" }
+        }
+        type="button"
+        onClick={handleClick}
+      >
+        {isFollowing ? "Following" : "Follow"}
+      </Button>
     </Wrap>
   );
 };
