@@ -1,15 +1,18 @@
+import baseImg from "../../images/baseImg.png";
+import logoImg from "../../images/logoImg.png";
+import person from "../../images/person.png";
 export const Card = () => {
   return (
     <div>
-      <img src="" alt="" />
-      <img src="" alt="" />
+      <img src={logoImg} alt="qw" />
+      <img src={baseImg} alt="qw" />
       <div></div>
-      <img src="" alt="" />
+      <img src={person} alt="qw" />
       <div>
-        <p></p>
-        <p></p>
+        <p>tweets</p>
+        <p>Followers</p>
       </div>
-      <button></button>
+      <button>Follow</button>
     </div>
   );
 };
