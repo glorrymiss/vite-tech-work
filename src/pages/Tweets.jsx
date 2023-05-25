@@ -1,9 +1,11 @@
-const Tweets = () ={
-    return(
-       <ul>
-        <li><p>Card</p></li>
-       </ul>
-    )
-}
+const Tweets = () => {
+  return (
+    <ul>
+      <li>
+        <p>Card</p>
+      </li>
+    </ul>
+  );
+};
 
-export default Tweets
+export default Tweets;
