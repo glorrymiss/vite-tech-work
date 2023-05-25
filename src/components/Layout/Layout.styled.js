@@ -9,7 +9,8 @@ export const Container = styled.div`
 `;
 
 export const Wrap = styled.div`
-  /* /* min-height: 100%;
+  min-height: 100%;
+  width: 1600px;
   display: flex;
-  flex-direction: column-reverse; */
+  flex-direction: column;
 `;

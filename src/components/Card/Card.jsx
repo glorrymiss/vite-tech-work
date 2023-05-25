@@ -2,14 +2,14 @@ import baseImg from "../../images/baseImg.png";
 import logoImg from "../../images/logoImg.png";
 import person from "../../images/person.png";
 import PropTypes from "prop-types";
-import { Wrap } from "./Card.styled";
+import { ImgLogo, ImgPerson, Line, Wrap } from "./Card.styled";
 export const Card = ({ tweets, followers, avatar, user }) => {
   return (
     <Wrap>
-      <img src={logoImg} alt={user} />
-      <img src={baseImg} alt={user} />
-      <div></div>
-      <img src={avatar ? avatar : person} alt={user} />
+      <ImgLogo src={logoImg} alt={user} width={76} />
+      <img src={baseImg} alt={user} width={308} />
+      <Line />
+      <ImgPerson src={avatar ? avatar : person} alt={user} width={62} />
       <div>
         <p>{tweets} tweets</p>
         <p>{followers} Followers</p>

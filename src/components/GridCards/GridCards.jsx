@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "../Card/Card";
 import { FetchApiUsers } from "../../Api/Api";
+import { List } from "./GridCards.styled";
 
 export const GridCards = () => {
   const [users, setUsers] = useState([]);
@@ -12,7 +13,7 @@ export const GridCards = () => {
   }, []);
 
   return (
-    <ul>
+    <List>
       {users.length &&
         users.map(({ id, tweets, followers, avatar, user }) => {
           return (
@@ -25,6 +26,6 @@ export const GridCards = () => {
             />
           );
         })}
-    </ul>
+    </List>
   );
 };
