@@ -1,10 +1,10 @@
+import { GridCards } from "../components/GridCards/GridCards";
+
 const Tweets = () => {
   return (
-    <ul>
-      <li>
-        <p>Card</p>
-      </li>
-    </ul>
+    <>
+      <GridCards />
+    </>
   );
 };
 

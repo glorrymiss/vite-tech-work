@@ -17,7 +17,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="tweets" element={<Tweets />} />
         </Route>
-        <Route path="*" element={<Layout />} />
+        {/* <Route path="*" element={<Layout />} /> */}
       </Routes>
 
       {/* <div>
