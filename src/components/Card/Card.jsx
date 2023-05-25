@@ -2,9 +2,10 @@ import baseImg from "../../images/baseImg.png";
 import logoImg from "../../images/logoImg.png";
 import person from "../../images/person.png";
 import PropTypes from "prop-types";
+import { Wrap } from "./Card.styled";
 export const Card = ({ tweets, followers, avatar, user }) => {
   return (
-    <div>
+    <Wrap>
       <img src={logoImg} alt={user} />
       <img src={baseImg} alt={user} />
       <div></div>
@@ -14,7 +15,7 @@ export const Card = ({ tweets, followers, avatar, user }) => {
         <p>{followers} Followers</p>
       </div>
       <button>Follow</button>
-    </div>
+    </Wrap>
   );
 };
 
