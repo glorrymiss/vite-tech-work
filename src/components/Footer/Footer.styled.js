@@ -13,6 +13,7 @@ export const FooterBack = styled.div`
 `;
 
 export const StyledLink = styled(NavLink)`
+  font-size: 30px;
   color: whitesmoke;
   margin-left: 30px;
   margin-bottom: 10px;
@@ -26,5 +27,28 @@ export const List = styled.ul`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  gap: 20px;
+  gap: 32px;
+`;
+
+export const Text = styled.h2`
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.36;
+  /* text-transform: uppercase; */
+
+  color: #ebd8ff;
+`;
+
+export const LinkNetworks = styled(NavLink)`
+  list-style: none;
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: #ffffff;
+    :hover {
+      fill: orangered;
+    }
+  }
 `;

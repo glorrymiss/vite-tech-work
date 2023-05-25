@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const StyledLink = styled(NavLink)`
-  font-size: 22px;
+  font-size: 32px;
 
   color: whitesmoke;
   margin-left: 60px;

@@ -1,6 +1,14 @@
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
+export const Wrap = styled.div`
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
 export const Text = styled.h2`
   font-family: "Montserrat", sans-serif;
   font-style: normal;
