@@ -58,17 +58,21 @@ export const GridCards = () => {
       {loading && <Loader />}
       <List>
         {perUsers.length &&
-          perUsers.map(({ id, tweets, followers, avatar, user }) => {
-            return (
-              <Card
-                key={id}
-                avatar={avatar}
-                tweets={tweets}
-                followers={followers}
-                user={user}
-              />
-            );
-          })}
+          perUsers.map(
+            ({ id, tweets, followers, avatar, user, isFollowing }) => {
+              return (
+                <Card
+                  key={id}
+                  id={id}
+                  avatar={avatar}
+                  tweets={tweets}
+                  followers={followers}
+                  user={user}
+                  isFollowing={isFollowing}
+                />
+              );
+            }
+          )}
       </List>
       {hasBtn && <BtnLoadMore onChange={handleLoad} />}
     </>

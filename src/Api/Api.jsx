@@ -25,6 +25,14 @@ export const FetchUsersAll = async () => {
   }
 };
 
+export const UpdateUsersAll = async (id, { followers, isFollowing }) => {
+  const response = await axios.put(`/users/${id}`, {
+    followers,
+    isFollowing,
+  });
+  return response.data;
+};
+
 FetchApiUsers.propTypes = {
   page: PropTypes.number.isRequired,
   limit: PropTypes.number.isRequired,

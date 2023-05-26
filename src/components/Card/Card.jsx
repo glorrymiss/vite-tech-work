@@ -13,17 +13,26 @@ import {
 } from "./Card.styled";
 import { useState } from "react";
 import Notiflix from "notiflix";
-export const Card = ({ tweets, followers, avatar, user }) => {
-  const [isFollowing, setIsFollowing] = useState(false);
+import { UpdateUsersAll } from "../../Api/Api";
+export const Card = ({ id, tweets, followers, avatar, user, isFollowing }) => {
+  const [isAllFollowing, setIsAllFollowing] = useState(isFollowing);
   const [totalFollowers, setTotalFollowers] = useState(followers);
 
   const handleClick = () => {
-    if (!isFollowing) {
-      setIsFollowing(true);
+    if (!isAllFollowing) {
+      UpdateUsersAll(id, {
+        isFollowing: !isFollowing,
+        followers: followers + 1,
+      });
+      setIsAllFollowing(true);
       Notiflix.Notify.success("Add success");
       setTotalFollowers(totalFollowers + 1);
     } else {
-      setIsFollowing(false);
+      setIsAllFollowing(id, {
+        isFollowing: !isFollowing,
+        followers: followers - 1,
+      });
+      setIsAllFollowing(false);
       setTotalFollowers(totalFollowers - 1);
     }
   };
@@ -53,8 +62,10 @@ export const Card = ({ tweets, followers, avatar, user }) => {
 };
 
 Card.propTypes = {
+  id: PropTypes.string.isRequired,
   tweets: PropTypes.number.isRequired,
   followers: PropTypes.number.isRequired,
   avatar: PropTypes.string.isRequired,
   user: PropTypes.string.isRequired,
+  isFollowing: PropTypes.bool.isRequired,
 };
