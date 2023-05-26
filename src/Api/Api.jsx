@@ -26,10 +26,14 @@ export const FetchUsersAll = async () => {
 };
 
 export const UpdateUsersAll = async (id, { followers, isFollowing }) => {
-  const response = await axios.put(`/users/${id}`, {
-    followers,
-    isFollowing,
-  });
+  console.log(id, followers, isFollowing);
+  const response = await axios.put(
+    `https://646b4f9f7d3c1cae4ce39997.mockapi.io/Users/${id}`,
+    {
+      followers,
+      isFollowing,
+    }
+  );
   return response.data;
 };
 

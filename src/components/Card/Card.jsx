@@ -28,7 +28,7 @@ export const Card = ({ id, tweets, followers, avatar, user, isFollowing }) => {
       Notiflix.Notify.success("Add success");
       setTotalFollowers(totalFollowers + 1);
     } else {
-      setIsAllFollowing(id, {
+      UpdateUsersAll(id, {
         isFollowing: !isFollowing,
         followers: followers - 1,
       });
@@ -48,14 +48,14 @@ export const Card = ({ id, tweets, followers, avatar, user, isFollowing }) => {
       </WrapText>
       <Button
         style={
-          isFollowing
+          isAllFollowing
             ? { backgroundColor: "#5CD3A8" }
             : { backgroundColor: "#EBD8FF" }
         }
         type="button"
         onClick={handleClick}
       >
-        {isFollowing ? "Following" : "Follow"}
+        {isAllFollowing ? "Following" : "Follow"}
       </Button>
     </Wrap>
   );
