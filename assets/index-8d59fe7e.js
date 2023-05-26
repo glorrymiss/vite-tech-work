@@ -425,9 +425,15 @@ Notiflix needs to be appended to the "<`+g+'>" element, but you called it before
   margin: 30px 0 70px;
 `,Gk=xe.button`
   width: 200px;
-  background-color: rgb(0, 102, 0);
+  background: linear-gradient(
+    114.99deg,
+    #471ca9 -0.99%,
+    #5736a3 54.28%,
+    #4b2a99 78.99%
+  );
+  box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
   color: white;
-  margin: 0 35% 80px;
+  margin: 0 45% 80px;
 
   padding: 8px 26px;
   font-weight: 600;
@@ -435,6 +441,6 @@ Notiflix needs to be appended to the "<`+g+'>" element, but you called it before
   border-radius: 6px;
   border: transparent;
   &:hover {
-    background-color: rgb(0, 153, 0);
+    color: orangered;
   }
 `,wh=({onChange:e})=>H.jsx(Gk,{type:"button",onClick:e,children:"Load more"});wh.propTypes={onChange:Zt.func.isRequired};const Kk=()=>{const[e,t]=T.useState([]),[n,r]=T.useState([]),[i,o]=T.useState(1),[a,s]=T.useState(!1),[l,u]=T.useState(!1),[f]=T.useState(3),p=Math.ceil(e.length/f);T.useEffect(()=>{Xk().then(w=>t(w))},[]),T.useEffect(()=>{u(!0),vh({page:i,limit:f}).then(w=>{w.length===0&&Jm.Notify.failure("Sorry...There are nothing...Please repeate again"),s(!0),i!==p+1&&r(y=>[...y,...w]),i===p&&s(!1)}).catch(w=>console.log(w)).finally(()=>u(!1))},[f,i,p]);const x=()=>{i===p&&s(!1),console.log("click"),o(w=>w+1)};return H.jsxs(H.Fragment,{children:[l&&H.jsx(Qm,{}),H.jsx(Qk,{children:n.length&&n.map(({id:w,tweets:y,followers:h,avatar:C,user:d,isFollowing:c})=>H.jsx(xh,{id:w,avatar:C,tweets:y,followers:h,user:d,isFollowing:c},w))}),a&&H.jsx(wh,{onChange:x})]})},Yk=()=>H.jsx(H.Fragment,{children:H.jsx(Kk,{})});function qk(){return H.jsx(H.Fragment,{children:H.jsx(Hy,{children:H.jsxs(Eo,{path:"/",element:H.jsx(mw,{}),children:[H.jsx(Eo,{index:!0,element:H.jsx(dx,{})}),H.jsx(Eo,{path:"tweets",element:H.jsx(Yk,{})})]})})})}As.createRoot(document.getElementById("root")).render(H.jsx(et.StrictMode,{children:H.jsx(Ky,{basename:"/vite-tech-work",children:H.jsx(qk,{})})}));
