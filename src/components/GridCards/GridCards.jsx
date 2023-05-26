@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+
 import { Card } from "../Card/Card";
-import { FetchApiUsers } from "../../Api/Api";
+import { FetchApiUsers, FetchUsersAll } from "../../Api/Api";
 import { List } from "./GridCards.styled";
 import { BtnLoadMore } from "../BtnLoadMore/BtnLoadMore";
 import Loader from "../Loader/Loader";
@@ -8,26 +9,32 @@ import Notiflix from "notiflix";
 
 export const GridCards = () => {
   const [users, setUsers] = useState([]);
+  const [perUsers, setPerUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [hasBtn, setHasBtn] = useState(false);
   const [loading, setLoading] = useState(false);
   const [limit] = useState(3);
-  const pages = users.length / limit;
-  //   const lastUsersIndex = page * limit;
-  //   const firstUsersIndex = lastUsersIndex - limit;
-  //   const currentUser = users.slice(firstUsersIndex, lastUsersIndex);
+  const pages = Math.ceil(users.length / limit);
 
   useEffect(() => {
+    FetchUsersAll().then((data) => setUsers(data));
+  }, []);
+  useEffect(() => {
     setLoading(true);
+
     FetchApiUsers({ page, limit })
-      .then((users) => {
-        if (users.length === 0) {
+      .then((data) => {
+        if (data.length === 0) {
           Notiflix.Notify.failure(
             "Sorry...There are nothing...Please repeate again"
           );
         }
         setHasBtn(true);
-        setUsers(users);
+
+        if (page !== pages + 1) {
+          setPerUsers((prev) => [...prev, ...data]);
+        }
+
         if (page === pages) {
           setHasBtn(false);
         }
@@ -42,6 +49,7 @@ export const GridCards = () => {
       setHasBtn(false);
     }
     console.log("click");
+
     setPage((prevState) => prevState + 1);
   };
 
@@ -49,8 +57,8 @@ export const GridCards = () => {
     <>
       {loading && <Loader />}
       <List>
-        {users.length &&
-          users.map(({ id, tweets, followers, avatar, user }) => {
+        {perUsers.length &&
+          perUsers.map(({ id, tweets, followers, avatar, user }) => {
             return (
               <Card
                 key={id}

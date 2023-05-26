@@ -35,7 +35,7 @@ export const Card = ({ tweets, followers, avatar, user }) => {
       <ImgPerson src={avatar ? avatar : person} alt={user} width={62} />
       <WrapText>
         <Text>{tweets} tweets</Text>
-        <Text> {totalFollowers} Followers</Text>
+        <Text> {totalFollowers.toLocaleString()} Followers</Text>
       </WrapText>
       <Button
         style={
