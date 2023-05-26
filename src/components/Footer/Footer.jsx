@@ -18,7 +18,7 @@ export const Footer = () => {
         </LinkNetworks>
         <LinkNetworks
           target="_blank"
-          t0="https://www.linkedin.com/in/yuliia-zherebetska/"
+          to="https://www.linkedin.com/in/yuliia-zherebetska/"
         >
           <RiLinkedinFill />
         </LinkNetworks>

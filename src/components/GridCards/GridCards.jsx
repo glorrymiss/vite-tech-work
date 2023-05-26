@@ -19,6 +19,7 @@ export const GridCards = () => {
   useEffect(() => {
     FetchUsersAll().then((data) => setUsers(data));
   }, []);
+
   useEffect(() => {
     setLoading(true);
 
@@ -38,7 +39,6 @@ export const GridCards = () => {
         if (page === pages) {
           setHasBtn(false);
         }
-        // setUsers((prevUsers) => [...prevUsers], ...data),
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
@@ -48,7 +48,6 @@ export const GridCards = () => {
     if (page === pages) {
       setHasBtn(false);
     }
-    console.log("click");
 
     setPage((prevState) => prevState + 1);
   };

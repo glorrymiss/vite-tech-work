@@ -6,7 +6,7 @@ export const FetchApiUsers = async ({ page, limit }) => {
     const responce = await axios.get(
       `https://646b4f9f7d3c1cae4ce39997.mockapi.io/Users/?page=${page}&limit=${limit}`
     );
-    console.log(responce.data);
+
     return responce.data;
   } catch (error) {
     console.log(error);
@@ -18,7 +18,7 @@ export const FetchUsersAll = async () => {
     const responce = await axios.get(
       `https://646b4f9f7d3c1cae4ce39997.mockapi.io/Users`
     );
-    console.log(responce.data);
+
     return responce.data;
   } catch (error) {
     console.log(error);
